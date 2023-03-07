@@ -105,7 +105,7 @@ models.sequelize.query(
 
 ---
 
-# ソースコードから見るログインの脆弱性
+# ソースコードから見るログインの脆弱性(adminでログイン)
 
 ```ts
 models.sequelize.query(
@@ -123,7 +123,7 @@ models.sequelize.query(
   * 今回はadminユーザーでログインすることができたので、該当したレコードがadminと思われる
 ---
 
-# ソースコードから見るログインの脆弱性
+# ソースコードから見るログインの脆弱性(benderでログイン)
 
 ```ts
 models.sequelize.query(
@@ -132,9 +132,10 @@ models.sequelize.query(
  AND deletedAt IS NULL`, { model: UserModel, plain: true })
 ```
 
-* `req.body.email`の値を`bender@email`
-* 
-* メールアドレスが分かってしまえば、パスワードを知らずともログインできてしまう
+* `req.body.email`の値を`bender@juice-sh.op'--`とすれば
+  * 先ほどと同様に`--`以降はコメントアウトとして見なされる
+  * よってパスワードが適当でもログインされる
+* 任意のユーザーに対してメールアドレスが分かってしまえば、パスワードを知らずともログインできる
 
 ---
 
