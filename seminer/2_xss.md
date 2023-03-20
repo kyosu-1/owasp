@@ -47,7 +47,7 @@ XSSは主に3つのタイプに分類される
 
 # OWASP juice shopによる実践
 
-検索におけるXSSの脆弱性を実践
+検索におけるXSSの脆弱性を実践。いずれも入力したパラメータがdom操作によって画面上に表示される際に、適切にサニタイズを行っていないことによるDOM-based XSSの脆弱性である。
 
 * Bonus Payload
 * DOM XSS
