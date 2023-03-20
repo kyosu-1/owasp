@@ -115,7 +115,7 @@ XSSは主に3つのタイプに分類される
   * `bypassSecurityTrustHtml`関数によってユーザー入力がHTMLとして扱われ、動的に挿入された`<script>`タグ等がそのまま認識される。
     * この関数は開発者がそのHTMLコードが信頼できることを確信している場合にのみ使用すべき
     * [参考: angular-safe-html](https://webbibouroku.com/Blog/Article/angular-safe-html)
-* XSSの種類としてはDom-based XSS
+* XSSの種類としてはDom-based XSS(おそらく反射型にも該当する)
 
 ---
 
