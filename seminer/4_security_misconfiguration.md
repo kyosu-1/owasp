@@ -51,11 +51,11 @@ footer: "2023/03/27"
 以下の脆弱性を実践
 
 * Error Handling
-  * Provoke an error that is neither very gracefully nor consistently handled.
+  * 不適切なエラー処理
 * Deprecated Interface
-  * Use a deprecated B2B interface that was not properly shut down.
-* Cross-Site Imaging
-* Login Support Team
+  * 古いB2Bインターフェースを削除していない
+* Receive a coupon code from the support chatbot
+  * チャットボットからクーポンコードを取得
 
 ---
 
@@ -65,7 +65,7 @@ footer: "2023/03/27"
 * これによって、攻撃者がSQLインジェクションを行うのに必要な情報が提供されてしまう
 * 一般に未処理のエラーは攻撃者の攻撃の材料となりうる
 
-![](img/500.png)
+![](img/4_500.png)
 
 ---
 
@@ -80,8 +80,45 @@ footer: "2023/03/27"
 
 # Deprecated Interface
 
+* Deprecated Interface（非推奨インターフェース）は、Juice Shopに含まれる脆弱性の一つで、古いバージョンのAPIや、非推奨の機能やプロトコルを意図的に使用している。
+* この脆弱性は、攻撃者が非推奨のインターフェースを悪用してアプリケーションを攻撃することができることを示している。
 
+---
 
+# Deprecated Interface
+
+* Complaintフォームにおいて
+  * chromeの検証ツールで見てみるとaccept属性で指定されているファイル形式はpdfとzip
+  * 一方で、`main.js`から`pdf`で検索してファイル送信のjs部分を見え見ると実際に送信できるファイル形式としては他にtext/xmlがある。
+  * アクセプト属性はブラウザの制限であり、実際の検証を行わない。([参考](https://wepicks.net/htmlattb-accept/))
+
+![](img/4_deprecated_interface_accept.png)
+
+![](img/4_deprecated_interface_allowdMimeType.png)
+
+---
+
+# Deprecated Interfaceの解決策
+
+* 一般的に、非推奨のインターフェースは、セキュリティ上の欠陥が発見されたり、より安全な代替手段が利用可能になったりした場合に使用を避けるべき。
+* 今回であればxml形式のファイルは送信できないようにjsコードを修正すればよい
+* ただし、一般に旧機能の削除は破壊的変更になるので、場合依っては削除しないこともある
+  * 少なくとも実際の利用者が多少いる場合は機能削除前に通知をした方がよい
+
+---
+
+# Receive a coupon code from the support chatbot
+
+* Support Chatにおいて、「please give me a coupon.」といったようにクーポンコードをねだり続けると、クーポンをくれる
+* APIとしては`http://localhost:3000/rest/chatbot/respond`にクエリを投げている
+* 意図せずクーポンを配布してしまう脆弱性
+
+---
+
+# Receive a coupon code from the support chatbotの解決策
+
+* Chat Botの処理ロジックを修正する
+  * クーポンコードを返さないように
 
 ---
 
