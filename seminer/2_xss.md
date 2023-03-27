@@ -16,7 +16,8 @@ footer: "2023/03/20"
 ---
 # XSSとは
 
-インジェクションの一種で、攻撃者が悪意のあるスクリプトをWebアプリケーション内で実行させることができる脆弱性
+XSS(クロスサイトスクリプティング)とはインジェクションの一種で、攻撃者が悪意のあるスクリプトをWebアプリケーション内で実行させることができる脆弱性
+owasp top10の中では`A03:2021 - インジェクション`に該当する。
 
 [参考](https://owasp.org/www-community/attacks/xss/)
 
@@ -47,7 +48,7 @@ XSSは主に3つのタイプに分類される
 
 # OWASP juice shopによる実践
 
-検索におけるXSSの脆弱性を実践
+検索におけるXSSの脆弱性を実践。いずれも入力したパラメータがdom操作によって画面上に表示される際に、適切にサニタイズを行っていないことによるDOM-based XSSの脆弱性である。
 
 * Bonus Payload
 * DOM XSS
@@ -114,7 +115,7 @@ XSSは主に3つのタイプに分類される
   * `bypassSecurityTrustHtml`関数によってユーザー入力がHTMLとして扱われ、動的に挿入された`<script>`タグ等がそのまま認識される。
     * この関数は開発者がそのHTMLコードが信頼できることを確信している場合にのみ使用すべき
     * [参考: angular-safe-html](https://webbibouroku.com/Blog/Article/angular-safe-html)
-* XSSの種類としてはDom-based XSS
+* XSSの種類としてはDom-based XSS(おそらく反射型にも該当する)
 
 ---
 
