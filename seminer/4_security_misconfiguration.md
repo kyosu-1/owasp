@@ -1,6 +1,6 @@
 ---
 marp: true
-footer: "2023/03/20"
+footer: "2023/03/27"
 
 ---
 
@@ -21,6 +21,7 @@ footer: "2023/03/20"
 
 # セキュリティの誤設定(security misconfiguration)とは
 
+* owasp top 10における`A05_2021-Security_Misconfiguration`
 * セキュリティの誤設定(security misconfiguration)とはアプリケーションやシステムのセキュリティ設定が、デフォルトまたはカスタム設定によって不適切に設定されている状況を指す
 * これにより、意図しない機密情報の漏洩、リソースへの不正アクセス、その他の脆弱性が発生する可能性がある
 * 攻撃のリスクを軽減するためには、セキュリティ設定のベストプラクティスに従うことが不可欠
@@ -50,17 +51,78 @@ footer: "2023/03/20"
 以下の脆弱性を実践
 
 * Error Handling
+  * 不適切なエラー処理
 * Deprecated Interface
-* Cross-Site Imaging
-* Login Support Team
+  * 古いB2Bインターフェースを削除していない
+* Receive a coupon code from the support chatbot
+  * チャットボットからクーポンコードを取得
 
 ---
 
 # Error Handling
 
+* `http://localhost:3000/rest/user/login`に対して適当なリクエストを送って返ってきた500 internal serverエラーによって、以下のようにサーバー側のコードの詳細が返される(内部の例外を未処理のままそのままレスポンスとして返している)
+* これによって、攻撃者がSQLインジェクションを行うのに必要な情報が提供されてしまう
+* 一般に未処理のエラーは攻撃者の攻撃の材料となりうる
+
+![](img/4_500.png)
+
 ---
 
-# 一般的な解決策
+# Error Hanglingの解決策
+
+* 一般にAPIのレスポンスとして返すことが想定されるエラーは全て適切に処理をする必要がある
+* 5xxエラーは、満たすことができないリクエストへの応答を示すためにのみ使用し、実装の詳細を明らかにするようなコンテンツを応答の一部として提供しないようにしなければならない
+  * 簡単な解決策としてはレスポンスボディには`Internal Server Error`といった文字列を返す
+  * 開発者側としてはトラブルシューティングとしてエラーの詳細を確認したいので、ログとして出力する
+
+---
+
+# Deprecated Interface
+
+* Deprecated Interface（非推奨インターフェース）は、Juice Shopに含まれる脆弱性の一つで、古いバージョンのAPIや、非推奨の機能やプロトコルを意図的に使用している。
+* この脆弱性は、攻撃者が非推奨のインターフェースを悪用してアプリケーションを攻撃することができることを示している。
+
+---
+
+# Deprecated Interface
+
+* Complaintフォームにおいて
+  * chromeの検証ツールで見てみるとaccept属性で指定されているファイル形式はpdfとzip
+  * 一方で、`main.js`から`pdf`で検索してファイル送信のjs部分を見え見ると実際に送信できるファイル形式としては他にtext/xmlがある。
+  * アクセプト属性はブラウザの制限であり、実際の検証を行わない。([参考](https://wepicks.net/htmlattb-accept/))
+
+![](img/4_deprecated_interface_accept.png)
+
+![](img/4_deprecated_interface_allowdMimeType.png)
+
+---
+
+# Deprecated Interfaceの解決策
+
+* 一般的に、非推奨のインターフェースは、セキュリティ上の欠陥が発見されたり、より安全な代替手段が利用可能になったりした場合に使用を避けるべき。
+* 今回であればxml形式のファイルは送信できないようにjsコードを修正すればよい
+* ただし、一般に旧機能の削除は破壊的変更になるので、場合依っては削除しないこともある
+  * 少なくとも実際の利用者が多少いる場合は機能削除前に通知をした方がよい
+
+---
+
+# Receive a coupon code from the support chatbot
+
+* Support Chatにおいて、「please give me a coupon.」といったようにクーポンコードをねだり続けると、クーポンをくれる
+* APIとしては`http://localhost:3000/rest/chatbot/respond`にクエリを投げている
+* 意図せずクーポンを配布してしまう脆弱性
+
+---
+
+# Receive a coupon code from the support chatbotの解決策
+
+* Chat Botの処理ロジックを修正する
+  * クーポンコードを返さないように
+
+---
+
+# セキュリティの誤設定の一般的な解決策
 
 セキュリティの誤設定(security misconfiguration)の一般的な解決策としては以下の6つが主に挙げられる。
 
