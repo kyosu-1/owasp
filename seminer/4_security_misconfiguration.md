@@ -51,7 +51,9 @@ footer: "2023/03/27"
 以下の脆弱性を実践
 
 * Error Handling
+  * Provoke an error that is neither very gracefully nor consistently handled.
 * Deprecated Interface
+  * Use a deprecated B2B interface that was not properly shut down.
 * Cross-Site Imaging
 * Login Support Team
 
