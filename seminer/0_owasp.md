@@ -11,7 +11,6 @@
 9. A09:2021-Security Logging and Monitoring Failures
 10. A10:2021-Server-Side Request Forgery
 
-
 # owasp juice shop architecture
 
 owasp juice shopのアーキテクチャ図
@@ -19,3 +18,7 @@ owasp juice shopのアーキテクチャ図
 ![](https://pwning.owasp-juice.shop/introduction/img/architecture-diagram.png)
 
 [参考](https://pwning.owasp-juice.shop/introduction/architecture.html)
+
+# 参考
+
+* [CWE](https://cwe.mitre.org/)
