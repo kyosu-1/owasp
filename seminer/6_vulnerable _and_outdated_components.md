@@ -190,6 +190,8 @@ Heartbleedバグは、OpenSSLのTLS/DTLSハートビート拡張機能に関連�
 * Dependabotは、GitHubが提供する依存関係管理ツール
 * プロジェクトの依存関係を自動的に監視し、セキュリティ上の脆弱性が見つかった場合にはその修正を提案するもの
 * Dependabotは、脆弱性情報データベースやパッケージマネージャーのアップデート情報を監視し、プロジェクトの依存関係に関連する脆弱性を検出する。
+  * 脆弱性情報データベースの例：[nvd](https://nvd.nist.gov/)
+  * Dependabotは複数のデータベースを参照してる
 
 [サプライチェーンのセキュリティ](https://docs.github.com/ja/code-security/supply-chain-security/understanding-your-software-supply-chain/about-supply-chain-security)
 [dependabotを導入してみた](https://dev.classmethod.jp/articles/dependabot-101/)
