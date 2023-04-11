@@ -69,13 +69,17 @@ footer: "2023/04/11"
 ---
 
 # 脆弱性の事例1 Equifaxデータ侵害(2017年)
+
 **概要**
+
 クレジット報告機関であるEquifaxでは、古いApache Strutsの脆弱性を利用した攻撃により、約1億4700万人分の個人情報が盗まれた。([A03:2021 - Cryptographic Failures（暗号化の失敗）](https://owasp.org/Top10/A02_2021-Cryptographic_Failures/)とも関連してる)
 **原因**
+
 OSSのwebフレームワークであるApache Struts2に存在した脆弱性([CVE-2017-5638](https://nvd.nist.gov/vuln/detail/cve-2017-5638))が原因。この脆弱性は、攻撃者がリモートで任意のコードを実行できるもの。
 修正パッチがリリースされていたにもかかわらず、適用を行っていたかったことにより脆弱性を付かれた。
 
 **参考**
+
 [piyolog](https://piyolog.hatenadiary.jp/entry/20170307/1488907259)
 [Apache Struts2の脆弱性対策(IPA)](https://www.ipa.go.jp/security/vuln/oss/struts2_list.html)
 
@@ -83,14 +87,17 @@ OSSのwebフレームワークであるApache Struts2に存在した脆弱性([C
 
 # 脆弱性の事例2 Heartbleedバグ (2014年)
 **概要**
+
 Heartbleedバグは、2014年に発覚したOpenSSLの重大な脆弱性。([SSLとは](https://ds-b.jp/media/pages/200/))
 この脆弱性は、攻撃者が暗号化された通信を傍受し、秘密鍵やユーザー情報などの機密データにアクセスすることを可能になり、多くのウェブサイトやオンラインサービスに影響を与え、ユーザーのプライバシーやセキュリティを脅かす状況が発生。
 
 **原因**
+
 Heartbleedバグは、OpenSSLのTLS/DTLSハートビート拡張機能に関連する脆弱性([CVE-2014-0160](https://nvd.nist.gov/vuln/detail/cve-2014-0160))
 悪用すればシステムのシステムのメモリ上の情報を任意に閲覧することができてしまうとされる
 
 **参考**
+
 [piyolog](https://piyolog.hatenadiary.jp/entry/20140410/1397139257)
 [OpenSSLの脆弱性と対策](https://siteguard.jp-secure.com/blog/open-ssl)
 
