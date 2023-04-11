@@ -14,11 +14,12 @@ footer: "2023/04/11"
 
 * 脆弱で古くなったコンポーネント(Vulnerable and Outdated Components)とは
 * アプリケーションの構成
-* 想定されえる被害
+* 想定される被害
 * 脆弱性の事例
 * OWASP juice shopによる実践
 * 一般的な原因
 * 一般的な対応策
+* githubを利用した対策例 dependabot
 
 ---
 
