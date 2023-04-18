@@ -206,3 +206,5 @@ footer: "2023/04/18"
 * [OAuth 2.0 全フローの図解と動画](https://qiita.com/TakahikoKawasaki/items/200951e5b5929f840a1f)
 * [一番分かりやすいOauthの仕組み](https://qiita.com/TakahikoKawasaki/items/e37caf50776e00e733be)
 * [Authentication_Cheat_Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+* [マイクロサービスの認証・認可とJWT](https://speakerdeck.com/oracle4engineer/authentication-and-authorization-in-microservices-and-jwt)
+* [Microservices における認証と認可の設計パターン](https://please-sleep.cou929.nu/microservices-auth-design.html)
