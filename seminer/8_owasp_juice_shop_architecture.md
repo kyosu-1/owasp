@@ -49,8 +49,6 @@ jwtトークンのpayloadの中にroleのプロパティがあり、そちらで
 # 脆弱性
 
 * ログインの脆弱性 → SQLインジェクションが起こりうる
-* Oauthの脆弱性 → ？
-
-# 
+* Oauthの脆弱性 → 
 
 https://github.com/juice-shop/juice-shop/blob/9a0789b5ecb4ee76fe528b1860095e945f6302ac/frontend/src/app/login/login.component.ts
