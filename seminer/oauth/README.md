@@ -232,6 +232,7 @@ OAuth2.0には、以下の4つの主要なフロー（グラントタイプ）�
 * クライアントシークレットやトークン交換の手順がないため、セキュリティが弱い
 * シングルページアプリケーション（SPA）向けであったが、現在は認可コードフローにPKCEを適用した方が推奨されている
   * [OAuth2.0認可コードフロー+PKCEをシーケンス図で理解する](https://zenn.dev/zaki_yama/articles/oauth2-authorization-code-grant-and-pkce)
+    * 認可コードが盗まれた場合でも、攻撃者はコードベリファイアを持っていないためアクセストークンを取得できない
 
 ### リソースオーナーパスワードクレデンシャルフロー（Resource Owner Password Credentials Flow）
 
@@ -297,7 +298,7 @@ OAuth2.0は以下のような点で課題解決を行う。
 
 ## 脆弱性と対策
 
-
+[図解：OAuth 2.0に潜む「5つの脆弱性」と解決法](https://atmarkit.itmedia.co.jp/ait/articles/1710/24/news011.html)
 
 ## まとめ
 
