@@ -294,12 +294,19 @@ OAuth2.0は以下のような点で課題解決を行う。
 
 * Oauth2.0
   * 認可のフレームワーク(プロトコルと言われる場合もあるが単一のプロトコルではないことに注意)
-  * 
+* OpenID Connect
+  * Oauth2.0を拡張した認証プロトコル
+  * ID連携を行うことでSSOも実現可能
 
 **参考**
 
 * [OAuth徹底入門 セキュアな認可システムを適用するための原則と実践](https://www.shoeisha.co.jp/book/detail/9784798159294)
   * 非常に詳細にまとめられおり、実際にコードをハンズオンで実装するところまで扱っている書籍
+* [一番分かりやすい OAuth の説明](https://qiita.com/TakahikoKawasaki/items/e37caf50776e00e733be)
+* [一番分かりやすい OpenID Connect の説明](https://qiita.com/TakahikoKawasaki/items/498ca08bbfcc341691fe)
+* [Authentication_Cheat_Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
+* [マイクロサービスの認証・認可とJWT](https://speakerdeck.com/oracle4engineer/authentication-and-authorization-in-microservices-and-jwt)
+* [Microservices における認証と認可の設計パターン](https://please-sleep.cou929.nu/microservices-auth-design.html)
 
 ## Oauth2.0のデモ(google API)
 
