@@ -299,9 +299,18 @@ OAuth2.0は以下のような点で課題解決を行う。
 
 ## OpenID Connect
 
-[OpenID Connect 全フロー解説](https://qiita.com/TakahikoKawasaki/items/4ee9b55db9f7ef352b47)
+OpenID ConnectはOAuth2.0の上で認証レイヤーを追加し拡張した認証プロトコル。
+IDトークンを通じてユーザー認証を提供する。
 
 ### OpenID Connectのフロー
+
+OAuth2.0とほぼ同じ
+
+1. 認可コードフロー（Authorization Code Flow）
+2. インプリシットフロー（Implicit Flow）
+3. ハイブリッドフロー（Hybrid Flow）
+
+[OpenID Connect 全フロー解説](https://qiita.com/TakahikoKawasaki/items/4ee9b55db9f7ef352b47)
 
 ## 脆弱性と対策
 
