@@ -182,7 +182,12 @@
   * IDトークンを通じてユーザー認証を提供する
   * 認証サーバー（OpenIDプロバイダー）により、ユーザー情報を一元管理
 
-これらは[RFC6749](https://datatracker.ietf.org/doc/html/rfc6749)や[RFC7591](https://www.rfc-editor.org/rfc/rfc7591.html)で詳細な仕様が定義されている。
+**参考(詳細な定義)**
+* OAuth2.0
+  * [RFC6749](https://datatracker.ietf.org/doc/html/rfc6749)
+* OpenID Connect
+  * [RFC7591](https://www.rfc-editor.org/rfc/rfc7591.html)
+  * [openid-connect-core-1_0](https://openid.net/specs/openid-connect-core-1_0.html)
 
 ## OAuth2.0(OpenID Connect)のアクター
 
@@ -212,7 +217,7 @@ OAuth2.0には、以下の4つの主要なフロー（グラントタイプ）�
 4. クライアントクレデンシャルフロー（Client Credentials Flow）
 5. リフレッシュトークンフロー（Refresh Token Flow）
 
-[以下の各フローの引用元](https://qiita.com/TakahikoKawasaki/items/200951e5b5929f840a1f)
+[以下の各フローの引用元：OAuth 2.0 全フローの図解と動画](https://qiita.com/TakahikoKawasaki/items/200951e5b5929f840a1f)
 
 ### 認可コードフロー（Authorization Code Flow）
 
@@ -293,6 +298,8 @@ OAuth2.0は以下のような点で課題解決を行う。
 [OAuth認証とは何か?なぜダメなのか - 2020冬](https://ritou.hatenablog.com/entry/2020/12/01/000000)
 
 ## OpenID Connect
+
+[OpenID Connect 全フロー解説](https://qiita.com/TakahikoKawasaki/items/4ee9b55db9f7ef352b47)
 
 ### OpenID Connectのフロー
 
