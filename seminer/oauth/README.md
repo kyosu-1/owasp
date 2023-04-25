@@ -195,6 +195,12 @@
 - Resource Owner
   - OAuthによって保護されたリソースを持つユーザー
 
+## Oauth2.0のデモ(google API)
+
+以下がgoによるOauth2.0のデモアプリ
+
+https://github.com/kyosu-1/go-oauth
+
 ## OAuth2.0のフロー
 
 OAuth2.0のフローは、クライアント（通常はアプリケーション）がリソースオーナー（ユーザー）からリソースサーバー（ユーザーデータが格納されているサーバー）へのアクセス許可を得るための一連の手順である。
@@ -289,6 +295,9 @@ OAuth2.0は以下のような点で課題解決を行う。
 
 ### OpenID Connectのフロー
 
+## 脆弱性と対策
+
+
 
 ## まとめ
 
@@ -307,12 +316,6 @@ OAuth2.0は以下のような点で課題解決を行う。
 * [Authentication_Cheat_Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
 * [マイクロサービスの認証・認可とJWT](https://speakerdeck.com/oracle4engineer/authentication-and-authorization-in-microservices-and-jwt)
 * [Microservices における認証と認可の設計パターン](https://please-sleep.cou929.nu/microservices-auth-design.html)
-
-## Oauth2.0のデモ(google API)
-
-以下がgoによるOauth2.0のデモアプリ
-
-https://github.com/kyosu-1/go-oauth
 
 # 4. その他話題
 
